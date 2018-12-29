@@ -1,0 +1,244 @@
+<html>
+<body >
+<script>
+//validations begin
+function myfuc()
+First Name, Middle Name, Last Name, 
+Email, Mobile Number, Password, Confirm Password and Register Button
+
+{
+											
+	//validation for usernmae id is username span id is message var is a format is correctway
+
+var a=document.getElementById("Firstname").value;
+var a1=document.getElementById("Middlename").value;
+var a2=document.getElementById("Lastname").value;
+var b=document.getElementById("email").value;
+var c= document.getElementById("phone").value;
+var d=document.getElementById("passwords").value;
+var e=document.getElementById("repassword").value;
+// validation for firstname
+if(a=="")
+{
+document.getElementById("message").innerHTML="** please fill the box";
+return false;
+}
+if(a.length<3)  
+	{
+document.getElementById("message").innerHTML=" ** user name must be greater than 3 characters";
+return false; 
+}
+if(a.length>13)
+{
+	document.getElementById("message").innerHTML=" ** user name must be than 13 lessthan characters";
+	return false; 
+	}
+
+
+var correctway=/^[A-Za-z]+$/;
+if(a.match(correctway))
+{
+	
+	document.getElementById("message").innerHTML= " ";
+	
+	}
+else{
+document.getElementById("message").innerHTML= " ** only letters are allowed";
+return false
+
+
+	}
+
+// validation for middlename is 
+
+if(a1=="")
+{
+document.getElementById("1message").innerHTML="** please fill the box";
+return false;
+}
+if(a1.length<3)  
+	{
+document.getElementById("1message").innerHTML=" ** user name must be greater than 3 characters";
+return false; 
+}
+if(a1.length>13)
+{
+	document.getElementById("1message").innerHTML=" ** user name must be than 13 lessthan characters";
+	return false; 
+	}
+
+
+var correctway=/^[A-Za-z]+$/;
+if(a1.match(correctway))
+{
+	
+	document.getElementById("1message").innerHTML= " ";
+	
+	}
+else{
+document.getElementById("1message").innerHTML= " ** only letters are allowed";
+return false
+
+
+	}
+
+// validations for Lastname
+
+if(a2=="")
+{
+document.getElementById("2message").innerHTML="** please fill the box";
+return false;
+}
+if(a2.length<3)  
+	{
+document.getElementById("2message").innerHTML=" ** user name must be greater than 3 characters";
+return false; 
+}
+if(a2.length>13)
+{
+	document.getElementById("2message").innerHTML=" ** user name must be than 13 lessthan characters";
+	return false; 
+	}
+
+
+var correctway=/^[A-Za-z]+$/;
+if(a2.match(correctway))
+{
+	
+	document.getElementById("2message").innerHTML= " ";
+	
+	}
+else{
+document.getElementById("2message").innerHTML= " ** only letters are allowed";
+return false
+
+
+	}
+
+
+
+//validation for email id is email span id is message1 var is b var type is exactformat
+
+
+var exactformat= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(b=="")
+{
+document.getElementById("message1").innerHTML= "** please enter email"	;
+return false;
+}
+
+
+if(b.match(exactformat))
+{
+	document.getElementById("message1").innerHTML= " ";
+}
+else
+	{
+document.getElementById("message1").innerHTML= " ** please enter the corrcet format";
+return false;
+}
+
+
+
+//validation for phone number c messag2 phone c f3
+
+
+if(c=="")
+{
+document.getElementById("message2").innerHTML="** please fill mobilenumber";
+return false;
+}
+
+if(isNaN(c))
+{
+document.getElementById("message2").innerHTML="** please enter only numbers";
+return false;
+}
+if(c.length<10)
+{
+document.getElementById("message2").innerHTML="** please enter number 0f 10 digits";
+return false;
+}
+
+if(c.length>10)
+{
+document.getElementById("message2").innerHTML="** please enter number 0f 10 digits";
+return false;
+}
+if((c.charAt(0)!=9) && (c.charAt(0)!=8) && (c.charAt(0)!=7))
+{
+document.getElementById("message2").innerHTML="** please enter number start with 9 or 8 or 7";
+return false;
+}
+
+//validation for password
+if(d=="")
+{
+
+document.getElementById("message3").innerHTML="** please enter your password";
+return false;
+}
+if(d.length<8)
+{
+document.getElementById("message3").innerHTML="**  password length must be 8 characters";
+return false;
+}
+if(d.search(/[0-9]/)==-1)
+{
+document.getElementById("message3").innerHTML="**  password must conatin atleast 1 numeric value";
+return false;
+}
+if(d.search(/[a-z]/)==-1)
+{
+document.getElementById("message3").innerHTML="**  password must conatin atleast 1 small letter";
+return false;
+}
+if(d.search(/[A-Z]/)==-1)
+{
+	document.getElementById("message3").innerHTML="**  password must conatin atleast 1 capital letter";
+return false;
+}
+if(d.search(/[!\@\#\$\%\^\&\*\(\)\-\_\{\}\|\\\:\;]/)==-1)
+{
+document.getElementById("message3").innerHTML="**  password must conatin atleast 1 special character";
+return false;
+}
+if(d!=e)
+{
+document.getElementById("message4").innerHTML=" ** password should be equal";
+return false;
+}
+}
+</script>
+//end of validations
+
+<form  onsubmit="return myfuc()">
+
+<input type="text" placeholder="Firstname" id="Firstname" ><br>
+<span id="message" style="color:red"></span>
+
+<input type="text" placeholder="Middlename" id="Middlename"><br>
+<span id="1message" style="color:red"></span>
+
+<input type="text" placeholder="lastname" id="Lastname"><br>
+<span id="2message" style="color:red"> </span>
+
+<input type="text" placeholder="example@domain.com" id="email" ><br>
+<span id="message1" style="color:red"></span>
+
+<input type="password" placeholder="enter your password" id="passwords" ><br>
+<span id="message3" style="color:red"></span>
+
+
+<input type="password" placeholder="retype your password" id="repassword" ><br>
+<span id="message4" style="color:red"></span>
+
+
+<input type="text" placeholder="+91" id="phone"  ><br>
+<span id="message2" style="color:red" ></span>
+  
+ <a href="task.html">Registration</a>
+
+</form>
+</body>
+</html>
